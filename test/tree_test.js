@@ -70,5 +70,17 @@ exports.treejs = {
 
     test.equal(tree.print(), expected, 'should print tree.');
     test.done();
-  }
+  },
+
+  'excercise 1': function(test) {
+    test.expect(1);
+
+    var expected = '' +
+      '  2\n' +
+      ' / \\\n' +
+      '1   3\n';
+
+    test.equal(tree.print(), expected, 'should print tree.');
+    test.done();
+  }  
 };
