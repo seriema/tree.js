@@ -30,6 +30,14 @@ function build123() {
     tree.insert(3);
 }
 
+function build12345() {
+    tree.insert(4);
+    tree.insert(2);
+    tree.insert(5);
+    tree.insert(1);
+    tree.insert(3);
+}
+
 exports.treejs = {
 
   setUp: function(done) {
@@ -108,6 +116,22 @@ exports.treejs = {
     test.done();
   },
 
+  'count depth on empty tree': function(test) {
+    test.expect(1);
+    
+    test.equal(tree.maxDepth(), 0, 'should count max depth correctly.');
+    test.done();
+  },
+
+  'count depth on short tree': function(test) {
+    test.expect(1);
+    
+    build123();
+
+    test.equal(tree.maxDepth(), 2, 'should count max depth correctly.');
+    test.done();
+  },
+
   'excercise 1': function(test) {
     test.expect(1);
 
@@ -125,13 +149,18 @@ exports.treejs = {
   'excercise 2': function(test) {
     test.expect(1);
     
-    tree.insert(4);
-    tree.insert(2);
-    tree.insert(5);
-    tree.insert(1);
-    tree.insert(3);
+    build12345();
 
     test.equal(tree.size(), 5, 'should count size correctly.');
+    test.done();
+  },
+
+  'excercise 3': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    test.equal(tree.maxDepth(), 3, 'should count max depth correctly.');
     test.done();
   }
 };
