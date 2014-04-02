@@ -132,6 +132,24 @@ exports.treejs = {
     test.done();
   },
 
+  'find min value in short tree': function(test) {
+    test.expect(1);
+    
+    build123();
+
+    test.equal(tree.minValue(), 1, 'should print numbers in order.');
+    test.done();
+  },
+
+  'find min value in bigger tree': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    test.equal(tree.minValue(), 1, 'should print numbers in order.');
+    test.done();
+  },
+
   'sequential print short tree': function(test) {
     test.expect(1);
     
@@ -183,6 +201,15 @@ exports.treejs = {
     build12345();
 
     test.equal(tree.maxDepth(), 3, 'should count max depth correctly.');
+    test.done();
+  },
+
+  'excercise 4': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    test.equal(tree.minValue(), 1, 'should find minimal value.');
     test.done();
   },
 
