@@ -278,7 +278,26 @@ exports.treejs = {
   'exercise 7': function(test) {
     test.expect(4);
     
-    build12345();
+    tree.insert(5);
+    tree.insert(4);
+    tree.insert(8);
+
+    tree.left.left = new Tree();
+    tree.left.left.data = 11;
+
+    tree.left.left.left = new Tree();
+    tree.left.left.left.data = 7;
+    tree.left.left.right = new Tree();
+    tree.left.left.right.data = 2;
+
+    tree.right.left = new Tree();
+    tree.right.left.data = 13;
+
+    tree.right.right = new Tree();
+    tree.right.right.data = 4;
+
+    tree.right.right.right = new Tree();
+    tree.right.right.right.data = 1;
 
     test.equal(tree.hasPathSum(27), true, 'should find first path sum.');
     test.equal(tree.hasPathSum(22), true, 'should find second path sum.');
