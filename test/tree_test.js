@@ -199,7 +199,7 @@ exports.treejs = {
     
     build12345();
 
-    test.equal(tree.hasPathSum(27), true, 'should find path sum 27.');
+    test.equal(tree.hasPathSum(9), true, 'should find path sum 27.');
     test.done();
   },
 
