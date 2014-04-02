@@ -172,6 +172,28 @@ exports.treejs = {
     test.done();
   },
 
+  'postorder print short tree': function(test) {
+    test.expect(1);
+    
+    build123();
+
+    var expected = '1 3 2 ';
+
+    test.equal(tree.printPostorder(), expected, 'should print numbers in postorder.');
+    test.done();
+  },
+
+  'postorder print bigger tree': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    var expected = '1 3 2 5 4 ';
+
+    test.equal(tree.printPostorder(), expected, 'should print numbers in postorder.');
+    test.done();
+  },
+
   'excercise 1': function(test) {
     test.expect(1);
 
@@ -221,6 +243,17 @@ exports.treejs = {
     var expected = '1 2 3 4 5 ';
 
     test.equal(tree.printTree(), expected, 'should print numbers in order.');
+    test.done();
+  },
+
+  'exercise 6': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    var expected = '1 3 2 5 4 ';
+
+    test.equal(tree.printPostorder(), expected, 'should print numbers in postorder.');
     test.done();
   }
 };
