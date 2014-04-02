@@ -88,6 +88,26 @@ exports.treejs = {
     test.done();
   },
 
+  'count short tree': function(test) {
+    test.expect(1);
+
+    build123();
+
+    test.equal(tree.size(), 3, 'should count size correctly.');
+    test.done();
+  },
+
+  'count bigger tree': function(test) {
+    test.expect(1);
+
+    var size = 25;
+    for (var i = 0; i < size; i++)
+      tree.insert(i);
+
+    test.equal(tree.size(), size, 'should count size correctly.');
+    test.done();
+  },
+
   'excercise 1': function(test) {
     test.expect(1);
 
