@@ -35,7 +35,7 @@ exports.treejs = {
       ' / \\\n' +
       '1   3\n';
 
-    test.equal(tree.print(), expected, 'should print tree.');
+    test.strictEqual(tree.print(), expected, 'should print tree.');
     test.done();
   },
 
@@ -44,7 +44,7 @@ exports.treejs = {
     
     build12345();
 
-    test.equal(tree.size(), 5, 'should count size correctly.');
+    test.strictEqual(tree.size(), 5, 'should count size correctly.');
     test.done();
   },
 
@@ -53,7 +53,7 @@ exports.treejs = {
     
     build12345();
 
-    test.equal(tree.maxDepth(), 3, 'should count max depth correctly.');
+    test.strictEqual(tree.maxDepth(), 3, 'should count max depth correctly.');
     test.done();
   },
 
@@ -62,7 +62,7 @@ exports.treejs = {
     
     build12345();
 
-    test.equal(tree.minValue(), 1, 'should find minimal value.');
+    test.strictEqual(tree.minValue(), 1, 'should find minimal value.');
     test.done();
   },
 
@@ -73,7 +73,7 @@ exports.treejs = {
 
     var expected = '1 2 3 4 5 ';
 
-    test.equal(tree.printTree(), expected, 'should print numbers in order.');
+    test.strictEqual(tree.printTree(), expected, 'should print numbers in order.');
     test.done();
   },
 
@@ -84,7 +84,7 @@ exports.treejs = {
 
     var expected = '1 3 2 5 4 ';
 
-    test.equal(tree.printPostorder(), expected, 'should print numbers in postorder.');
+    test.strictEqual(tree.printPostorder(), expected, 'should print numbers in postorder.');
     test.done();
   },
 
@@ -112,10 +112,10 @@ exports.treejs = {
     tree.right.right.right = new Tree();
     tree.right.right.right.data = 1;
 
-    test.equal(tree.hasPathSum(27), true, 'should find first path sum.');
-    test.equal(tree.hasPathSum(22), true, 'should find second path sum.');
-    test.equal(tree.hasPathSum(26), true, 'should find third path sum.');
-    test.equal(tree.hasPathSum(18), true, 'should find fourth path sum.');
+    test.ok(tree.hasPathSum(27), 'should find first path sum.');
+    test.ok(tree.hasPathSum(22), 'should find second path sum.');
+    test.ok(tree.hasPathSum(26), 'should find third path sum.');
+    test.ok(tree.hasPathSum(18), 'should find fourth path sum.');
     test.done();
   }
 };
