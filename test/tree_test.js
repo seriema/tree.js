@@ -100,5 +100,18 @@ exports.treejs = {
 
     test.equal(tree.print(), expected, 'should print tree.');
     test.done();
+  },
+
+  'excercise 2': function(test) {
+    test.expect(1);
+    
+    tree.insert(4);
+    tree.insert(2);
+    tree.insert(5);
+    tree.insert(1);
+    tree.insert(3);
+
+    test.equal(tree.size(), 5, 'should count size correctly.');
+    test.done();
   }
 };
