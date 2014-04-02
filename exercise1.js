@@ -1,6 +1,8 @@
 'use strict';
 
-var tree = require('./lib/tree.js');
+var Tree = require('./lib/tree.js');
+
+var tree = new Tree();
 
 tree.insert(2);
 tree.insert(1);
