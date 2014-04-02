@@ -132,6 +132,28 @@ exports.treejs = {
     test.done();
   },
 
+  'sequential print short tree': function(test) {
+    test.expect(1);
+    
+    build123();
+
+    var expected = '1 2 3 ';
+
+    test.equal(tree.printTree(), expected, 'should print numbers in order.');
+    test.done();
+  },
+
+  'sequential print bigger tree': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    var expected = '1 2 3 4 5 ';
+
+    test.equal(tree.printTree(), expected, 'should print numbers in order.');
+    test.done();
+  },
+
   'excercise 1': function(test) {
     test.expect(1);
 
@@ -161,6 +183,17 @@ exports.treejs = {
     build12345();
 
     test.equal(tree.maxDepth(), 3, 'should count max depth correctly.');
+    test.done();
+  },
+
+  'exercise 5': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    var expected = '1 2 3 4 5 ';
+
+    test.equal(tree.printTree(), expected, 'should print numbers in order.');
     test.done();
   }
 };
