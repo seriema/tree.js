@@ -1,6 +1,6 @@
 'use strict';
 
-var tree = require('../lib/tree.js');
+var Tree = require('../lib/tree.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,17 +22,25 @@ var tree = require('../lib/tree.js');
     test.ifError(value)
 */
 
-exports.treejs = {
-  setUp: function(done) {
+var tree;
+
+function build123() {
     tree.insert(2);
     tree.insert(1);
     tree.insert(3);
+}
 
+exports.treejs = {
+
+  setUp: function(done) {
+    tree = new Tree();
     done();
   },
 
   'find root': function(test) {
     test.expect(1);
+
+    build123();
 
     test.equal(tree.lookup(2), true, 'should find node.');
     test.done();
@@ -41,12 +49,16 @@ exports.treejs = {
   'find left node': function(test) {
     test.expect(1);
 
+    build123();
+
     test.equal(tree.lookup(1), true, 'should find node.');
     test.done();
   },
 
   'find right node': function(test) {
     test.expect(1);
+
+    build123();
 
     test.equal(tree.lookup(3), true, 'should find node.');
     test.done();
@@ -56,12 +68,16 @@ exports.treejs = {
   'dont find missing node': function(test) {
     test.expect(1);
 
+    build123();
+
     test.equal(tree.lookup(4), false, 'should not find node.');
     test.done();
   },
 
   'print simple tree': function(test) {
     test.expect(1);
+
+    build123();
 
     var expected = '' +
       '  2\n' +
@@ -75,6 +91,8 @@ exports.treejs = {
   'excercise 1': function(test) {
     test.expect(1);
 
+    build123();
+
     var expected = '' +
       '  2\n' +
       ' / \\\n' +
@@ -82,5 +100,5 @@ exports.treejs = {
 
     test.equal(tree.print(), expected, 'should print tree.');
     test.done();
-  }  
+  }
 };
