@@ -194,6 +194,24 @@ exports.treejs = {
     test.done();
   },
 
+  'find existing path sums for bigger tree': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    test.equal(tree.hasPathSum(27), true, 'should find path sum 27.');
+    test.done();
+  },
+
+  'dont find non-existing path sums for bigger tree': function(test) {
+    test.expect(1);
+    
+    build12345();
+
+    test.equal(tree.hasPathSum(2), false, 'should not find path sum 2.');
+    test.done();
+  },
+
   'excercise 1': function(test) {
     test.expect(1);
 
@@ -254,6 +272,18 @@ exports.treejs = {
     var expected = '1 3 2 5 4 ';
 
     test.equal(tree.printPostorder(), expected, 'should print numbers in postorder.');
+    test.done();
+  },
+
+  'exercise 7': function(test) {
+    test.expect(4);
+    
+    build12345();
+
+    test.equal(tree.hasPathSum(27), true, 'should find first path sum.');
+    test.equal(tree.hasPathSum(22), true, 'should find second path sum.');
+    test.equal(tree.hasPathSum(26), true, 'should find third path sum.');
+    test.equal(tree.hasPathSum(18), true, 'should find fourth path sum.');
     test.done();
   }
 };
