@@ -1,4 +1,4 @@
-# tree.js [![Build Status](https://secure.travis-ci.org/seriema/treejs.png?branch=master)](http://travis-ci.org/seriema/treejs)
+# tree.js [![Build Status](https://travis-ci.org/seriema/tree.js.svg?branch=master)](https://travis-ci.org/seriema/tree.js)
 
 Solutions to Binary Tree Problems
 
